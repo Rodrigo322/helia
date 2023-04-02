@@ -8,7 +8,7 @@
 
 ## 💻 Sobre o projeto
 
-Helia e um app para alugel de casas
+Helia e um app para aluguel de casas
 
 ---
 
