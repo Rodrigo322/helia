@@ -32,14 +32,12 @@ export function Home() {
         </View>
         <Text style={styles.userName}>Olá, Rodrigo Lucas</Text>
         <View style={styles.inputContainer}>
-          <View style={styles.inputGroup}>
-            <MagnifyingGlass size={32} color="#757575" weight="thin" />
-            <TextInput
-              style={styles.input}
-              placeholderTextColor="#757575"
-              placeholder="Procure por casas aqui"
-            />
-          </View>
+          <MagnifyingGlass size={32} color="#757575" weight="thin" />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor="#757575"
+            placeholder="Procure por casas aqui"
+          />
           <FadersHorizontal size={32} color="#1AB65C" weight="thin" />
         </View>
 
@@ -161,7 +159,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
+    paddingHorizontal: 20,
+    gap: 10,
     marginBottom: 20,
   },
   inputGroup: {
@@ -170,7 +169,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   input: {
-    width: "60%",
+    flex: 1,
     color: "#f4f4f4",
   },
   content: {
