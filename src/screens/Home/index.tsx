@@ -11,12 +11,16 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
 import hotel from "../../assets/images/hotel.png";
 
 export function Home() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -43,74 +47,21 @@ export function Home() {
 
         <View style={styles.content}>
           <View style={styles.card}>
-            <Image style={styles.cardImage} source={hotel} />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
-              <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
-            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Details")}
+              style={styles.cardButton}
+            >
+              <Image style={styles.cardImage} source={hotel} />
+              <View style={styles.cardInfo}>
+                <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
+                <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
+              </View>
+            </TouchableOpacity>
             <View style={styles.cardInfoBuy}>
               <Text style={styles.cardInfoBuyValue}>R$ 420</Text>
-              <Bookmark size={32} color="#F4F4F4" weight="bold" />
-            </View>
-          </View>
-
-          <View style={styles.card}>
-            <Image style={styles.cardImage} source={hotel} />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
-              <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
-            </View>
-            <View style={styles.cardInfoBuy}>
-              <Text style={styles.cardInfoBuyValue}>R$ 420</Text>
-              <Bookmark size={32} color="#F4F4F4" weight="bold" />
-            </View>
-          </View>
-
-          <View style={styles.card}>
-            <Image style={styles.cardImage} source={hotel} />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
-              <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
-            </View>
-            <View style={styles.cardInfoBuy}>
-              <Text style={styles.cardInfoBuyValue}>R$ 420</Text>
-              <Bookmark size={32} color="#F4F4F4" weight="bold" />
-            </View>
-          </View>
-
-          <View style={styles.card}>
-            <Image style={styles.cardImage} source={hotel} />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
-              <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
-            </View>
-            <View style={styles.cardInfoBuy}>
-              <Text style={styles.cardInfoBuyValue}>R$ 420</Text>
-              <Bookmark size={32} color="#F4F4F4" weight="bold" />
-            </View>
-          </View>
-
-          <View style={styles.card}>
-            <Image style={styles.cardImage} source={hotel} />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
-              <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
-            </View>
-            <View style={styles.cardInfoBuy}>
-              <Text style={styles.cardInfoBuyValue}>R$ 420</Text>
-              <Bookmark size={32} color="#F4F4F4" weight="bold" />
-            </View>
-          </View>
-
-          <View style={styles.card}>
-            <Image style={styles.cardImage} source={hotel} />
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoTitle}>Hotel Nova Vista</Text>
-              <Text style={styles.cardInfoSubTitle}>Posse, Goiás</Text>
-            </View>
-            <View style={styles.cardInfoBuy}>
-              <Text style={styles.cardInfoBuyValue}>R$ 420</Text>
-              <Bookmark size={32} color="#F4F4F4" weight="bold" />
+              <TouchableOpacity>
+                <Bookmark size={32} color="#F4F4F4" weight="bold" />
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -187,6 +138,11 @@ const styles = StyleSheet.create({
     gap: 10,
     padding: 15,
     justifyContent: "space-between",
+  },
+  cardButton: {
+    alignItems: "flex-start",
+    flexDirection: "row",
+    gap: 10,
   },
   cardImage: {
     width: 90,

@@ -4,6 +4,7 @@ export declare global {
       SignIn: undefined;
       TabRoutes: undefined;
       Home: undefined;
+      Details: undefined;
     }
   }
 }

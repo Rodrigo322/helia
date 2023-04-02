@@ -64,7 +64,7 @@ export function SignIn() {
       <View style={styles.footer}>
         <Text style={styles.footerText}>Não possui conta?</Text>
         <TouchableOpacity>
-          <Text style={styles.footerButtonText}>Cadatre-se</Text>
+          <Text style={styles.footerButtonText}>Cadastre-se</Text>
         </TouchableOpacity>
       </View>
     </View>
